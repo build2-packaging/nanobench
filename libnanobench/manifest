@@ -1,13 +1,12 @@
 : 1
 name: libnanobench
-version: 0.1.0-a.0.z
+version: 4.3.10-a.0.z
 project: nanobench
-summary: nanobench C++ library
-license: other: proprietary ; Not free/open source.
+summary: Microbenchmarking functionality for C++11/14/17/20
+license: MIT
 description-file: README.md
-url: https://example.org/nanobench
-email: helmesjo@gmail.com
-#build-error-email: helmesjo@gmail.com
+url: https://github.com/martinus/nanobench
+# email:
+#build-error-email:
 depends: * build2 >= 0.15.0
 depends: * bpkg >= 0.15.0
-#depends: libhello ^1.0.0
