@@ -1,3 +1,1 @@
-# libnanobench
-
-C++ library
+../upstream/README.md

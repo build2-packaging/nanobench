@@ -1,34 +1,12 @@
-#include <sstream>
-#include <stdexcept>
-
 #include <nanobench.h>
 
-#undef NDEBUG
-#include <cassert>
-
-int main ()
-{
-  using namespace std;
-  using namespace nanobench;
-
-  // Basics.
-  //
-  {
-    ostringstream o;
-    say_hello (o, "World");
-    assert (o.str () == "Hello, World!\n");
-  }
-
-  // Empty name.
-  //
-  try
-  {
-    ostringstream o;
-    say_hello (o, "");
-    assert (false);
-  }
-  catch (const invalid_argument& e)
-  {
-    assert (e.what () == string ("empty name"));
-  }
+int main() {
+  double d = 1.0;
+  ankerl::nanobench::Bench().run("some double ops", [&] {
+    d += 1.0 / d;
+    if (d > 5.0) {
+        d -= 5.0;
+    }
+    ankerl::nanobench::doNotOptimizeAway(d);
+  });
 }
