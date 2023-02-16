@@ -14,7 +14,7 @@ lib{nanobench}: $pub/{$pub_hdrs}
 
 # Private headers and sources as well as dependencies.
 #
-lib{nanobench}: {hxx cxx}{**} $impl_libs $intf_libs
+lib{nanobench}: libul{nanobench}: {hxx cxx}{**} $impl_libs $intf_libs
 
 # Build options.
 #
@@ -31,6 +31,12 @@ cxx.poptions =+ "-I$out_pfx_src" "-I$src_pfx_src" \
 
 # Export options.
 #
+libs{nanobench}: def{nanobench}: include = ($cxx.target.system == 'win32-msvc')
+def{nanobench}: libul{nanobench}
+
+if ($cxx.target.system == 'mingw32')
+  cxx.loptions += -Wl,--export-all-symbols
+
 lib{nanobench}:
 {
   cxx.export.poptions = "-I$out_pfx_inc" "-I$src_pfx_inc"

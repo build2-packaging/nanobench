@@ -1,6 +1,7 @@
 # Compiler/linker output.
 #
 *.d
+*.def
 *.t
 *.i
 *.i.*
