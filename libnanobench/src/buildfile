@@ -26,6 +26,12 @@ src_pfx_src = [dir_path] $src_root/src/
 cxx.poptions =+ "-I$out_pfx_src" "-I$src_pfx_src" \
                 "-I$out_pfx_inc" "-I$src_pfx_inc"
 
+# Silence some warnings
+if ($cxx.target.class == 'windows' && $cxx.id == 'clang')
+{
+  cxx.coptions += -Wno-ignored-pragma-optimize -Wno-deprecated-declarations
+}
+
 # Export options.
 #
 libs{nanobench}: def{nanobench}: include = ($cxx.target.system == 'win32-msvc')
