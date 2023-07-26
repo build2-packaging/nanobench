@@ -1,12 +1,11 @@
 : 1
 name: libnanobench
-version: 4.3.11
+version: 4.3.11+1
 project: nanobench
-summary: Microbenchmarking functionality for C++11/14/17/20
+summary: Microbenchmarking functionality for C++11/14/17/20.
 license: MIT
 description-file: README.md
+package-description-file: PACKAGE-README.md
 url: https://github.com/martinus/nanobench
-# email:
-#build-error-email:
-depends: * build2 >= 0.15.0
-depends: * bpkg >= 0.15.0
+depends: * build2 >= 0.16.0
+depends: * bpkg >= 0.16.0
