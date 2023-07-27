@@ -1,6 +1,6 @@
 : 1
 name: libnanobench
-version: 4.3.11+1
+version: 4.3.11+2
 project: nanobench
 summary: Microbenchmarking functionality for C++11/14/17/20.
 license: MIT
